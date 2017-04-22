@@ -24,7 +24,8 @@ Specdata = np.genfromtxt(interpolatedSpec, dtype=None, skip_header=32)
 #gather wavelength values/labels
 wvl = Specdata[:,0]
 print("wavelengths collected")
-#calculate mean for each sample site, specify each column
+#calculate mean for each wvl at each sample site, specify each column
+#need to fix! results should be: 350- 2.3345, 351-2.3322, etc 
 d1 = np.mean(Specdata[:,[1,2,3]], axis=0)
 d2 = np.mean(Specdata[:,[4,5,6]], axis=0)
 d3 = np.mean(Specdata[:,[7,8,9]], axis=0)
