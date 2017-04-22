@@ -45,6 +45,10 @@ print("created new array with mean reflectance values")
 #transpose data (swap x and y axes)
 newSpecT = np.transpose(newSpec)
 
+#create row labels
+rowLabels = np.array=(['Wvl','D1','D2','D3','M1','M2','M3','M4','S1','S2','S3'])
+np.transpose(rowLabels)
+
 #save array as csv file
 SpecCsv = np.savetxt(outCsv, newSpecT, delimiter=",")
 print("Saved data as csv file")
