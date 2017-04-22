@@ -24,18 +24,18 @@ Specdata = np.genfromtxt(interpolatedSpec, dtype=None, skip_header=32)
 #gather wavelength values/labels
 wvl = Specdata[:,0]
 print("wavelengths collected")
-#calculate mean for each wvl at each sample site, specify each column
-#need to fix! results should be: 350- 2.3345, 351-2.3322, etc 
-d1 = np.mean(Specdata[:,[1,2,3]], axis=0)
-d2 = np.mean(Specdata[:,[4,5,6]], axis=0)
-d3 = np.mean(Specdata[:,[7,8,9]], axis=0)
-m1 = np.mean(Specdata[:,[10,11,12]], axis=0)
-m2 = np.mean(Specdata[:,[13,14,15]], axis=0)
-m3 = np.mean(Specdata[:,[16,17,18]], axis=0)
-m4 = np.mean(Specdata[:,[19,20,21]], axis=0)
-s1 = np.mean(Specdata[:,[22,23,24]], axis=0)
-s2 = np.mean(Specdata[:,[25,26,27]], axis=0)
-s3 = np.mean(Specdata[:,[28,29,30]], axis=0)
+
+#calculate mean for each wvl at each sample site, specify each column 
+d1 = np.mean(Specdata[:,[1,2,3]], axis=1)
+d2 = np.mean(Specdata[:,[4,5,6]], axis=1)
+d3 = np.mean(Specdata[:,[7,8,9]], axis=1)
+m1 = np.mean(Specdata[:,[10,11,12]], axis=1)
+m2 = np.mean(Specdata[:,[13,14,15]], axis=1)
+m3 = np.mean(Specdata[:,[16,17,18]], axis=1)
+m4 = np.mean(Specdata[:,[19,20,21]], axis=1)
+s1 = np.mean(Specdata[:,[22,23,24]], axis=1)
+s2 = np.mean(Specdata[:,[25,26,27]], axis=1)
+s3 = np.mean(Specdata[:,[28,29,30]], axis=1)
 print("mean spectra calculated for each site")
 
 #populate new array with ave values, axis 1=rows, axis 0=cols
