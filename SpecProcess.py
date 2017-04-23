@@ -10,7 +10,7 @@
 # Import Modules
 import os,csv, sys
 import numpy as np
-#import xlswriter
+import matplotlib.pyplot as plt
 ###############
 # set paths and variables
 # path to interpolated spec txt file
@@ -36,11 +36,11 @@ m4 = np.mean(Specdata[:,[19,20,21]], axis=1)
 s1 = np.mean(Specdata[:,[22,23,24]], axis=1)
 s2 = np.mean(Specdata[:,[25,26,27]], axis=1)
 s3 = np.mean(Specdata[:,[28,29,30]], axis=1)
-print("mean spectra calculated for each site")
+print("Mean spectra calculated for each site")
 
 #populate new array with ave values, axis 1=rows, axis 0=cols
 newSpec = np.column_stack((wvl,d1,d2,d3,m1,m2,m3,m4,s1,s2,s3), 0)
-print("created new array with mean reflectance values")
+print("Created new array with mean reflectance values")
 
 #transpose data (swap x and y axes)
 newSpecT = np.transpose(newSpec)
