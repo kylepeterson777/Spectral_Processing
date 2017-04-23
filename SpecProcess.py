@@ -47,12 +47,18 @@ newSpecT = np.transpose(newSpec)
 
 #create row labels
 rowLabels = np.array=(['Wvl','D1','D2','D3','M1','M2','M3','M4','S1','S2','S3'])
-np.transpose(rowLabels)
 
 #save array as csv file
 SpecCsv = np.savetxt(outCsv, newSpecT, delimiter=",")
 print("Saved data as csv file")
 
+#create plots of reflectance data
+fig = plt.figure()
+ax = plt.axes()
+
+x = newSpec[:,1]
+ax.plot(x, np.linspace(0.0,1.0,10));
+plt.show()
 
 
 
