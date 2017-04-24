@@ -46,7 +46,7 @@ print("Created new array with mean reflectance values")
 newSpecT = np.transpose(newSpec)
 
 #create row labels
-rowLabels = np.array=(['Wvl','D1','D2','D3','M1','M2','M3','M4','S1','S2','S3'])
+rowLabels = np.array(['Wvl','D1','D2','D3','M1','M2','M3','M4','S1','S2','S3'])
 
 #save array as csv file
 SpecCsv = np.savetxt(outCsv, newSpecT, delimiter=",")
@@ -57,7 +57,7 @@ fig = plt.figure()
 ax = plt.axes()
 
 x = newSpec[:,1]
-ax.plot(x, np.linspace(0.0,1.0,10));
+ax.plot(x);
 plt.show()
 
 
