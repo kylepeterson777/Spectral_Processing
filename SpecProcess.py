@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 ###############
 # set paths and variables
 # path to interpolated spec txt file
-interpolatedSpec = r'E:\PythonProgramming\Final\Oct28_interpolated.txt'
-outCsv = r'E:\PythonProgramming\FinalSpecCsv.txt'
+interpolatedSpec = r'C:\Student\KYLE\Spectral_Processing\Oct28_interpolated.txt'
+outCsv = r'C:\Student\KYLE\Spectral_Processing\FinalSpecCsv.txt'
 
 #ignore first 32 rows
 Specdata = np.genfromtxt(interpolatedSpec, dtype=None, skip_header=32)
@@ -25,7 +25,7 @@ Specdata = np.genfromtxt(interpolatedSpec, dtype=None, skip_header=32)
 wvl = Specdata[:,0]
 print("wavelengths collected")
 
-#calculate mean for each wvl at each sample site, specify each column 
+#calculate mean for each wvl at each sample site, specify each column
 d1 = np.mean(Specdata[:,[1,2,3]], axis=1)
 d2 = np.mean(Specdata[:,[4,5,6]], axis=1)
 d3 = np.mean(Specdata[:,[7,8,9]], axis=1)
@@ -39,7 +39,7 @@ s3 = np.mean(Specdata[:,[28,29,30]], axis=1)
 print("Mean spectra calculated for each site")
 
 #populate new array with ave values, axis 1=rows, axis 0=cols
-newSpec = np.column_stack((wvl,d1,d2,d3,m1,m2,m3,m4,s1,s2,s3), 0)
+newSpec = np.column_stack((wvl,d1,d2,d3,m1,m2,m3,m4,s1,s2,s3))
 print("Created new array with mean reflectance values")
 
 #transpose data (swap x and y axes)
