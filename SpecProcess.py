@@ -60,12 +60,9 @@ for i in range(len(newSpecT)):
     plt.title("Sample: "+ rowLabels[j])
     plt.xlabel("Wavelength (nm)")
     plt.ylabel("Reflectance %")
+    #plt.ylabel("Log Reflectance")
+    #plt.yscale('log')
     plt.ylim(0.0,10.0)
     plt.xlim(350,1500);
     plt.show()
     j = j+1
-
-
-
-
-
